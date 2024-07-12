@@ -102,6 +102,14 @@ jobs:
         sed -i 's/return sandboxConfig\.working/return false/g' build/soong/ui/build/sandbox_linux.go
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
+        export FOX_VERSION="R${{ github.event.inputs.MANIFEST_BRANCH }}"
+        export OF_MAINTAINER="BensolBiru"
+        export BUILD_USERNAME="ariden24"
+        export BUILD_HOSTNAME="BensolBiru"
+        export FOX_AB_DEVICE=0
+        export FOX_VIRTUAL_AB_DEVICE=0
+        export FOX_USE_NANO_EDITOR=1
+        export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         set -e
         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
 
