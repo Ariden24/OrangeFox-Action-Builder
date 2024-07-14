@@ -121,7 +121,7 @@ jobs:
         export FOX_USE_NANO_EDITOR=1
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export FOX_DELETE_AROMAFM=1
-        export OF_ENABLE_LPTOOLS=1
+        
         set -e
         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
 
