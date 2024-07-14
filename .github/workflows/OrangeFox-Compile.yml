@@ -104,7 +104,7 @@ jobs:
 
         export ALLOW_MISSING_DEPENDENCIES=true
         
-        if [[ -n "${{ github.event.inputs.DEVICE_PATH }}/profile/avatar.png" ]]
+        if [[ ! -z "${{ github.event.inputs.DEVICE_PATH }}/profile/avatar.png" ]]
            then
            export OF_MAINTAINER_AVATAR=${{ github.event.inputs.DEVICE_PATH }}/profile/avatar.png
         fi
