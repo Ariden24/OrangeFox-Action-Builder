@@ -119,7 +119,7 @@ jobs:
         export FOX_AB_DEVICE=0
         export FOX_VIRTUAL_AB_DEVICE=0
         export FOX_DISABLE_APP_MANAGER=1
-        export FOX_USE_NANO_EDITOR=1
+        
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export FOX_DELETE_AROMAFM=1
         
