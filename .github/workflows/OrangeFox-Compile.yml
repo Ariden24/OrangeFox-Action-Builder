@@ -117,7 +117,7 @@ jobs:
         export FOX_VIRTUAL_AB_DEVICE=0
         export FOX_DISABLE_APP_MANAGER=1
 
-        export OF_SCREEN_H=1080
+        export TW_THEME=portrait_hdpi
         export FOX_EXCLUDE_NANO_EDITOR=0
         export FOX_USE_NANO_EDITOR=1
         
