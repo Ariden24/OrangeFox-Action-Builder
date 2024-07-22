@@ -100,7 +100,7 @@ jobs:
         export USE_CCACHE=1
         export CCACHE_EXEC=/usr/bin/ccache
         sed -i 's/return sandboxConfig\.working/return false/g' build/soong/ui/build/sandbox_linux.go
-        source build/envsetup.sh
+        
 
         export ALLOW_MISSING_DEPENDENCIES=true
         
@@ -116,9 +116,16 @@ jobs:
         export FOX_AB_DEVICE=0
         export FOX_VIRTUAL_AB_DEVICE=0
         export FOX_DISABLE_APP_MANAGER=1
+
+        OF_SCREEN_H=1080
+        FOX_USE_NANO_EDITOR=1
+        FOX_EXCLUDE_NANO_EDITOR=0
         
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export FOX_DELETE_AROMAFM=1
+        export LC_ALL="C"
+
+        source build/envsetup.sh
         
         set -e
         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
