@@ -118,7 +118,6 @@ jobs:
         export FOX_DISABLE_APP_MANAGER=1
 
         export TW_THEME=portrait_hdpi
-        export FOX_EXCLUDE_NANO_EDITOR=0
         export FOX_USE_NANO_EDITOR=1
         
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
@@ -130,7 +129,7 @@ jobs:
 
     - name: Set Release Properties
       run: |
-        echo "BUILD_DATE=$(TZ=Asia/Manila date +%Y%m%d)" >> $GITHUB_ENV
+        echo "BUILD_DATE=$(TZ=Asia/Jakarta date +%Y%m%d)" >> $GITHUB_ENV
         cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
 
     - name: Upload to Release
